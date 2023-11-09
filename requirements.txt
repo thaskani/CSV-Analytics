@@ -1,0 +1,6 @@
+langchain
+streamlit
+tiktoken
+python-dotenv
+langchain_experimental
+openai==0.27.8
