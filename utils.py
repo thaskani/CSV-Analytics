@@ -8,10 +8,10 @@ def query_agent(data, query):
 
     # Parse the CSV file and create a Pandas DataFrame from its contents.
     df = pd.read_csv(data)
+    # create a pandas dataframe agent using openai select a model
     
-    agent = create_pandas_dataframe_agent(OpenAI(temperature=0), df, verbose=True)
-
-
+    agent = create_pandas_dataframe_agent(ChatOpenAI(model="gpt-4", temperature=0), df, verbose=True)
+    
     #Python REPL: A Python shell used to evaluating and executing Python commands. 
     #It takes python code as input and outputs the result. The input python code can be generated from another tool in the LangChain
     return agent.run(query)
